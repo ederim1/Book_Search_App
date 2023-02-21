@@ -1,18 +1,25 @@
+// add external API to get google books
 const API_URL = 'https://www.googleapis.com/books/v1/volumes';
 
+
+// takes a search query and makes an HTTP request to the Google Books API using Axios. 
 function searchBooks(query) {
   const url = `${API_URL}?q=${query}`;
 
   axios.get(url)
     .then(response => {
       const books = response.data.items;
+
+      // It then calls the displayResults() function with the array of book objects returned by the API
+      
       displayResults(books);
     })
     .catch(error => {
       console.error(error);
     });
 }
-
+// this function thakes an array of book objects and generates HTML for
+// each book using template literals it then inserts the HTML in the DOM
 function displayResults(books) {
   const resultsDiv = document.getElementById('results');
 
@@ -20,7 +27,7 @@ function displayResults(books) {
     resultsDiv.innerHTML = 'No books found.';
     return;
   }
-
+// map() native Array ES6 function
   const booksHtml = books.map(book => {
     const title = book.volumeInfo.title;
     const author = book.volumeInfo.authors ? book.volumeInfo.authors[0] : 'Unknown author';
