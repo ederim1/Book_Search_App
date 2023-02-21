@@ -15,10 +15,8 @@ This is a basic index API with a searchbar where a user can look for a book by n
 
 * [Book Search App Javascript](https://vimeo.com/800714689/f09e1977a0)
 
-# Network Communication
+# Javascript basic app
 
-The achitecture used in this project is host to host, meaning from your computer you will connect to another device. 
-This program is running moules that allow the host to connect through the network to another host either in the same network or in another network.
 
 # Development Environment
 
@@ -36,6 +34,5 @@ This program is running moules that allow the host to connect through the networ
 
 # Future Work
 
-* Make the option selection working
-* Adding the port's name or protocol used in the port
-* Add a script to print a report to add to the ethical hacking report
+* Add links to the results
+* Pagination
